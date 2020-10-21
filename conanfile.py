@@ -4,7 +4,7 @@ import shutil
 class MacosSdkConan(ConanFile):
     name = 'macos-sdk'
 
-    sdk_version = '10.14'
+    sdk_version = '10.15'
     package_version = '0'
     version = '%s-%s' % (sdk_version, package_version)
 
