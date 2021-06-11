@@ -4,17 +4,17 @@ import shutil
 class MacosSdkConan(ConanFile):
     name = 'macos-sdk'
 
-    sdk_version = '11.0'
+    sdk_version = '12.0-beta1'
     package_version = '0'
     version = '%s-%s' % (sdk_version, package_version)
 
     settings = 'os'
     url = 'https://developer.apple.com/'
     description = 'macOS SDK'
-    sdk_dir = '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
+    sdk_dir = '/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
 
     def build(self):
-        self.run('ls -l /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs')
+        self.run('ls -l /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs')
 
     def package(self):
         self.copy('*', src=self.sdk_dir, symlinks=True, excludes=[
